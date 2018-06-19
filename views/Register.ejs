@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/Register.css' />
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <div class="headerDiv">
+        <div class="logoDiv">
+            <img src="/img/logo.jpg" alt="logo" href="#" />
+        </div>
+
+        <div class="titleDiv">
+            <h1>Student Management System</h1>
+        </div>
+    </div>
+
+    <marquee behavior="scroll" direction="left">If you are an admin, this application will help you to manage all the students' details and records.If you are a student,
+        this application will help you to manage your personal details and records
+    </marquee>
+
+    <article class="articleDiv">
+
+        <div id="loginIntroDiv">
+            <h1 style="text-align:center">Register here</h1>
+            <form action="/Register/save" method="post" >
+
+                <label>First Name</label>
+                <input type="text" placeholder="Enter First name" size="30" required>
+                <br>
+                <label>Last Name</label>
+                <input type="text" placeholder="Enter Last name" size="30" required>
+                <br>
+                <label>Role</label>
+                <select id="userRole">
+                    <option value="admin">Admin</option>
+                    <option value="student">Student</option>
+                </select>
+                <br id="studentIdbr">
+                <label id="studentIdlbl">Student Id</label>
+                <input id="studentId" type="text" placeholder="Enter Student Id" size="30" required>
+                <br id="employeeIdbr">
+                <label id="employeeIdlbl">Employee Id</label>
+                <input id="employeeId" type="text" placeholder="Enter Employee Id" size="30" required>
+                <br>
+                <label>Email</label>
+                <input type="text" placeholder="Enter Email" size="30" required>
+                <br>
+                <label>Password</label>
+                <input type="password" placeholder="Enter Password" size="30" required>
+                <br>
+                <label>Re-enter Password</label>
+                <input type="password" placeholder="Re-enter password" size="30" required>
+                <br><br>
+                <input type="submit" value="Register" />
+
+            </form>
+
+        </div>
+    </article>
+
+    <section>
+        Copyrights
+    </section>
+</body>
+<script>
+    $('#userRole').on('change', function () {
+        if ($(this).val() === "admin") {
+            $("#employeeIdbr").show()
+            $("#studentIdbr").hide()
+            $("#employeeIdlbl").show()
+            $("#studentIdlbl").hide()
+            $("#employeeId").show()
+            $("#studentId").hide()
+        }
+        else {
+            $("#employeeIdbr").hide()
+            $("#studentIdbr").show()
+            $("#employeeIdlbl").hide()
+            $("#studentIdlbl").show()
+            $("#employeeId").hide()
+            $("#studentId").show()
+        }
+    });
+</script>
+
+</html>
