@@ -4,10 +4,12 @@
 <head>
     <title>
         <%= title %>
-    </title>
-    <!-- <link rel='stylesheet' href='/css/Register.css' type="text/css" /> -->
+    </title>    
     <link rel='stylesheet' href='/css/Register.css' type="text/css" />
+    
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+    <!-- <script src="/js/validation.js"></script> -->
 
 </head>
 
@@ -30,13 +32,13 @@
 
         <div id="loginIntroDiv">
             <h1 style="text-align:center">Register here</h1>
-            <form action="/Register/save" method="POST">
+            <form name="registration" action="/Register/save" method="POST">
 
                 <label>First Name</label>
-                <input type="text" placeholder="Enter First name" size="30" required>
+                <input type="text" name="firstname" placeholder="Enter First name" size="30" required>
                 <br>
                 <label>Last Name</label>
-                <input type="text" placeholder="Enter Last name" size="30" required>
+                <input type="text" name="lastname" placeholder="Enter Last name" size="30" required>
                 <br>
                 <label>Role</label>
                 <select id="userRole">
@@ -45,19 +47,19 @@
                 </select>
                 <br id="studentIdbr">
                 <label id="studentIdlbl">Student Id</label>
-                <input id="studentId" type="text" placeholder="Enter Student Id" size="30" required>
+                <input id="studentId" name="studentId" type="text" placeholder="Enter Student Id" size="30" required>
                 <br id="employeeIdbr">
                 <label id="employeeIdlbl">Employee Id</label>
-                <input id="employeeId" type="text" placeholder="Enter Employee Id" size="30" required>
+                <input id="employeeId" name="employeeId" type="text" placeholder="Enter Employee Id" size="30" required>
                 <br>
                 <label>Email</label>
-                <input type="text" placeholder="Enter Email" size="30" required>
+                <input type="email" name="email" placeholder="Enter Email" size="30" required>
                 <br>
                 <label>Password</label>
-                <input type="password" placeholder="Enter Password" size="30" required>
+                <input type="password" name="password" placeholder="Enter Password" size="30" required>
                 <br>
                 <label>Re-enter Password</label>
-                <input type="password" placeholder="Re-enter password" size="30" required>
+                <input type="password" name="cpwd" placeholder="Re-enter password" size="30" required>
                 <br>
                 <br>
                 <input type="submit" value="Register" />

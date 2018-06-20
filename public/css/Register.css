@@ -57,7 +57,7 @@ legend, label{
     display: None;
 }
 
-input[type=text], input[type=password], select{
+input[type=text], input[type=password], input[type=email], select{
     width: 100%;
     padding: 8px 16px;
     margin: 8px 0;
