@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/css/Register.css' />
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.js"
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous"></script>
-  </head>
 
-  <body>
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <!-- <link rel='stylesheet' href='/css/Register.css' type="text/css" /> -->
+    <link rel='stylesheet' href='/css/Register.css' type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
     <div class="headerDiv">
         <div class="logoDiv">
             <img src="/img/logo.jpg" alt="logo" href="#" />
@@ -28,7 +30,7 @@
 
         <div id="loginIntroDiv">
             <h1 style="text-align:center">Register here</h1>
-            <form action="/Register/save" method="post" >
+            <form action="/Register/save" method="POST">
 
                 <label>First Name</label>
                 <input type="text" placeholder="Enter First name" size="30" required>
@@ -56,7 +58,8 @@
                 <br>
                 <label>Re-enter Password</label>
                 <input type="password" placeholder="Re-enter password" size="30" required>
-                <br><br>
+                <br>
+                <br>
                 <input type="submit" value="Register" />
 
             </form>
@@ -69,8 +72,14 @@
     </section>
 </body>
 <script>
+
+    $(document).ready(function () {
+        $("#studentId").removeAttr('required')
+    });
+
     $('#userRole').on('change', function () {
         if ($(this).val() === "admin") {
+            $("#studentId").removeAttr('required')
             $("#employeeIdbr").show()
             $("#studentIdbr").hide()
             $("#employeeIdlbl").show()
@@ -79,6 +88,7 @@
             $("#studentId").hide()
         }
         else {
+            $("#employeeId").removeAttr('required')
             $("#employeeIdbr").hide()
             $("#studentIdbr").show()
             $("#employeeIdlbl").hide()
