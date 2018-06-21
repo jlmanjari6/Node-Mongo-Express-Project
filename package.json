@@ -4,7 +4,8 @@
   "description": "Node,express and mongodb sample project",
   "main": "y",
   "scripts": {
-    "test": "nodemon"
+    "test": "nodemon",
+    "start":"node index.js"
   },
   "author": "Manju",
   "license": "ISC",
