@@ -7,7 +7,7 @@ var upload = multer();
 var mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/userdb')
+mongoose.connect('mongodb+srv://manju-javvaji_17:manju7@manju-orz4f.mongodb.net/test?retryWrites=true')
     .then(() => console.log('connection succesful'))
     .catch((err) => console.error(err));
 
@@ -32,8 +32,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/Register', registration);
 
-app.listen(port, () => {
-    console.log("Server listening on port " + port);
-  });
+// app.listen(port, () => {
+//     console.log("Server listening on port " + port);
+//   });
+
+app.listen(process.env.PORT || port , () => {
+        console.log("Server listening on port " + port);
+      });
 
 module.exports = app;

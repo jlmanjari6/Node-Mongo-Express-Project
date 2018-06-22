@@ -13,7 +13,6 @@ router.get('/', function(req, res, next) {
 
 // Save user
 router.post('/save', function(req, res) {
-    console.log(req.body);
     employeeControllerObj.save(req, res);
   });
 
