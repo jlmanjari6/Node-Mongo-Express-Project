@@ -3,6 +3,7 @@ var path = require('path');
 var bodyParser = require('body-parser');//to parse the document
 var multer = require('multer'); //for multipart form
 var upload = multer();
+var db =  require('./config/db') 
 
 var mongoose = require('mongoose');
 
@@ -10,7 +11,7 @@ mongoose.Promise = global.Promise;
 
 //Use mongodb://localhost/userdb to connect to the local mongodb, where userdb is the name of the database.
 //Here, we are connecting to the mongo atlas cloud instead of local db.
-mongoose.connect('mongodb+srv://manju-javvaji_17:manju7@manju-orz4f.mongodb.net/test?retryWrites=true')
+mongoose.connect(db.url)
     .then(() => console.log('connection succesful'))
     .catch((err) => console.error(err));
 
