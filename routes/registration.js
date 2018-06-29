@@ -7,7 +7,7 @@ var router = express.Router();
 var employeeControllerObj = require("../controllers/EmployeeController.js");
 var studentControllerObj = require("../controllers/StudentController.js");
 
-//Redirect to registration page
+//GET registration page
 router.get('/', function (req, res, next) {
   res.render('Register', { title: 'Register here' });
 });

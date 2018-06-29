@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/css/Site.css' />
-  </head>
 
-  <body>
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/css/Site.css' />
+</head>
+
+<body>
     <div class="headerDiv">
         <div class="logoDiv">
             <img src="img/logo.jpg" alt="logo" href="#" />
@@ -26,19 +29,20 @@
         </div>
         <div id="loginIntroDiv">
             <h1>Welcome to the Student Application</h1>
-            <form>
+            <form name="login" action="/login" method="POST">
                 <fieldset>
                     <legend>Login</legend>
                     <label>Email</label>
-                    <input type="text" placeholder="Enter Email" size="30" required>
-                    <br> 
+                    <input name="usermail" type="text" placeholder="Enter Email" size="30" required>
+                    <br>
                     <label>Password</label>
-                    <input type="password" placeholder="Enter Password" size="30" required>
-                    <br> 
-                    <input type="submit" value="Login"/>
+                    <input name="userpwd" type="password" placeholder="Enter Password" size="30" required>
+                    <br>
+                    <input type="submit" value="Login" />
                 </fieldset>
             </form>
-            <label>Don't have account? <a href="Register">SignUp</a> here!</label>
+            <label>Don't have account?
+                <a href="Register">SignUp</a> here!</label>
         </div>
     </article>
 
@@ -46,4 +50,5 @@
         Copyrights © 2018 . All rights reserved.
     </section>
 </body>
+
 </html>
